@@ -23,9 +23,10 @@ class BaseModel:
                 if "updated_at"not in kwargs.keys():
                     self.updated_at = datetime.now()
                 setattr(self, key, value)
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """ return string representation of the object"""
