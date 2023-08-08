@@ -6,8 +6,23 @@ from datetime import datetime
 
 class BaseModel:
     """Defines all common attributes/methods for other classes"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """constructor to make instance"""
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                if key == "created_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if key == "updated_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if "id" not in kwargs.keys():
+                    self.id = str(uuid4())
+                if "created_at" not in kwargs.keys():
+                    self.created_at = datetime.now()
+                if "updated_at"not in kwargs.keys():
+                    self.updated_at = datetime.now()
+                setattr(self, key, value)
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
