@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 '''Method Command Interpreter'''
 import cmd
 import shlex
@@ -171,4 +172,30 @@ class HBNBCommand(cmd.Cmd):
         pass
 
 if _name_ == '_main_':
+=======
+""" The console that represents the frontend of the App """
+import cmd
+
+
+class HBNBCommand(cmd.Cmd):
+    """Define the command interpreter"""
+
+    prompt = "(hbnb) "
+
+    def do_quit(self, arg):
+        """Quit command to exit the program"""
+        exit()
+
+    def do_EOF(self, arg):
+        """Exit the program"""
+        print("")
+        exit()
+
+    def emptyline(self):
+        """pass when emptyline entered"""
+        pass
+
+
+if __name__ == '__main__':
+>>>>>>> 8ab641b669c9dad7650615848ce92d5febba9c98
     HBNBCommand().cmdloop()
