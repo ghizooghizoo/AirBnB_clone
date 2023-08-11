@@ -1,6 +1,6 @@
 ## AirBnB clone - The console
 
-his project is just a basic copy of AirBnB.
+This project is just a basic copy of AirBnB.
 
 ## Command interpreter
 
