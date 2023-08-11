@@ -3,15 +3,6 @@
 from models.base_model import BaseModel
 
 
-
-
 class Amenity(BaseModel):
-    '''class amenity'''
-
-
+    '''Represents an amenity'''
     name = ""
-
-
-    def _init_(self, *args, **kwargs):
-        """initializes Amenity"""
-        super()._init_(*args, **kwargs)
